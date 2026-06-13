@@ -1,27 +1,26 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import {useFonts} from 'expo-font'
+import { Stack } from 'expo-router'
+import * as SplashScreen from 'expo-splash-screen'
+import { Appearance } from 'react-native'
+import { Colors } from '@/constants/theme'
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
+// SplashScreen.preventAutoHideAsync();
 
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
-
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
+export default function RootLayout(){
+  const colorScheme = Appearance.getColorScheme();
+  const theme = colorScheme==='dark' ? Colors.dark: Colors.light
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        {/* Adding stack for created index, contact page*/}
-        {/* <Stack.Screen name = "index" options={{title: "Home", headerShown: false}}></Stack.Screen>
-        // <Stack.Screen name = "contact" options={{title: "Contact Us"}}></Stack.Screen>
-        // <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} /> */}
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
+    <Stack screenOptions={{
+      headerStyle: {backgroundColor: theme.headerBackground},
+      headerTintColor: theme.text,
+      headerShadowVisible: false
+    }}>
+      <Stack.Screen name="index" options={{headerShown:false, title: "Home"}}/>
+      <Stack.Screen name="menu" options={{headerShown:false, title: "Menu", headerTitle: "Coffee Menu for Today"}}/>
+      <Stack.Screen name="contact" options={{headerShown:false, title: "Contact", headerTitle: "Contact Us"}}/>
+      <Stack.Screen name="modal" options={{headerShown:false}}/>
+    </Stack>
+  )
+  
 }
