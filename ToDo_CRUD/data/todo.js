@@ -1,0 +1,22 @@
+export const data = [
+    { id: 1, title: "Buy groceries", completed: false },
+    { id: 2, title: "Finish React Native tutorial", completed: true },
+    { id: 3, title: "Read 20 pages of a book", completed: false },
+    { id: 4, title: "Exercise for 30 minutes", completed: true },
+    { id: 5, title: "Clean the workspace", completed: false },
+    { id: 6, title: "Reply to emails", completed: true },
+    { id: 7, title: "Pay electricity bill", completed: false },
+    { id: 8, title: "Update resume", completed: true },
+    { id: 9, title: "Prepare interview questions", completed: false },
+    { id: 10, title: "Call a friend", completed: true },
+    { id: 11, title: "Learn Redux Toolkit", completed: false },
+    { id: 12, title: "Review JavaScript concepts", completed: true },
+    { id: 13, title: "Organize project files", completed: false },
+    { id: 14, title: "Write daily journal", completed: true },
+    { id: 15, title: "Practice coding problems", completed: false },
+    { id: 16, title: "Watch a React Native video", completed: true },
+    { id: 17, title: "Backup important documents", completed: false },
+    { id: 18, title: "Plan next week's goals", completed: true },
+    { id: 19, title: "Refactor old code", completed: false },
+    { id: 20, title: "Submit project report", completed: true }
+];
