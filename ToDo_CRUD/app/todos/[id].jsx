@@ -1,13 +1,11 @@
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import {View, Text, StyleSheet, Pressable, TextInput} from 'react-native';
 import { useState, useContext, useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {ThemeContext} from '@/context/ThemeContext'
 import { StatusBar } from 'expo-status-bar';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Octicons from '@expo/vector-icons/Octicons'
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useRouter } from 'expo-router';
 
 export default function EditScreen(){
     const {id} = useLocalSearchParams()
